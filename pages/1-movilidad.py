@@ -32,11 +32,11 @@ df = df.rename(columns={'LONGITUD': 'LON'})
 month = st.selectbox('MES',(df["MES"].sort_values(ascending=True).unique()))  
 day = st.selectbox('DÍA',(df["DIA"].sort_values(ascending=True).unique()))   
 clase = st.selectbox('CLASE',(df["CLASE"].sort_values(ascending=True).unique()))  
-COMUNA = st.selectbox('COMUNA',(df["COMUNA"].sort_values(ascending=True).unique()))  
+Gravedad = st.selectbox('GRAVEDAD',(df["GRAVEDAD"].sort_values(ascending=True).unique()))  
 
 # 
 df['FECHA'] = pd.to_datetime(df['FECHA'])
-filtro = (df['MES'] == month) & (df['DIA'] ==day) & (df['CLASE'] =='Choque') & (df['COMUNA '] ==COMUNA )
+filtro = (df['MES'] == month) & (df['DIA'] ==day) & (df['CLASE'] =='Choque') & (df['GRAVEDAD'] ==Gravedad )
 
 # 
 df_filtrado = df.loc[filtro] 
